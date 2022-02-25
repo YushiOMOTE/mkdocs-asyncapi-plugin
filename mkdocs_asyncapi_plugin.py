@@ -7,7 +7,7 @@ import tempfile
 import os
 
 
-MARKER = re.compile(r"!!asyncapi(?: (?P<path>[^\\/\s><&:]+))?!!")
+MARKER = re.compile(r"!!asyncapi(?: (?P<path>[^\s><&:]+))?!!")
 
 
 class AsyncAPIPlugin(mkdocs.plugins.BasePlugin):
@@ -37,6 +37,6 @@ class AsyncAPIPlugin(mkdocs.plugins.BasePlugin):
             fname = os.path.splitext(fname)[0]
             outfile = os.path.join(outdir, fname + ".md")
             with open(outfile) as f:
-                return f.read()
-
+                generated = f.read()
+                markdown = markdown.replace(match.group(0), generated)
         return markdown
