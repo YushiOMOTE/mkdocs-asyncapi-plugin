@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mkdocs-asyncapi-plugin"
-version = "0.1.1"
+version = "0.2.0"
 description = "mkdocs plugin to generate pages from asyncapi spec files"
 authors = ["YushiOMOTE <yushiomote@gmail.com>"]
 license = "MIT"
